@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca Segura</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>Biblioteca Segura</h1>
+      <p>Sistema con 2FA, JWT, RBAC y Refresh Token</p>
+    </header>
+
+    <section class="card">
+      <h2>Login - Paso 1</h2>
+      <div class="form-group">
+        <label for="correo">Correo</label>
+        <input id="correo" type="email" placeholder="correo@gmail.com" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input id="password" type="password" placeholder="Ingresa tu contraseña" />
+      </div>
+
+      <button id="btnPaso1">Enviar código</button>
+    </section>
+
+    <section class="card">
+      <h2>Login - Paso 2</h2>
+      <div class="form-group">
+        <label for="codigo">Código de 4 dígitos</label>
+        <input id="codigo" type="text" placeholder="1234" maxlength="4" />
+      </div>
+
+      <button id="btnPaso2">Validar código</button>
+    </section>
+
+    <section class="card">
+      <h2>Tokens</h2>
+      <div class="form-group">
+        <label for="accessToken">Access Token</label>
+        <textarea id="accessToken" rows="4" readonly></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="refreshToken">Refresh Token</label>
+        <textarea id="refreshToken" rows="3" readonly></textarea>
+      </div>
+
+      <button id="btnRefresh">Generar nuevo Access Token</button>
+    </section>
+
+    <section class="card actions">
+      <h2>Rutas protegidas</h2>
+      <div class="action-buttons">
+        <button id="btnEspacio">Ver mi espacio</button>
+        <button id="btnAdmin">Ver dashboard admin</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Respuesta del servidor</h2>
+      <pre id="resultado">Aquí aparecerán las respuestas...</pre>
+    </section>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
